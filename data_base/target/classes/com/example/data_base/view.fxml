@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="440.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.data_base.MainController">
+    <GridPane>
+        <!-- Первый столбец кнопок -->
+        <VBox alignment="TOP_CENTER" prefHeight="174.0" prefWidth="92.0" spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <Label alignment="TOP_CENTER" text="База данных">
+            <font>
+               <Font size="15.0" />
+            </font></Label>
+            <Button onAction="#createDatabase" text="Create" />
+            <Button onAction="#saveDatabase" text="Save" />
+            <Button onAction="#loadDatabase" text="Load" />
+            <Button onAction="#deleteDatabase" text="Delete" />
+            <Button onAction="#cleanDatabase" text="Clean" />
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+        </VBox>
+
+        <!-- Второй столбец кнопок -->
+        <VBox alignment="TOP_CENTER" spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <Label text="Данные" textAlignment="CENTER">
+            <font>
+               <Font size="15.0" />
+            </font></Label>
+            <Button onAction="#addRecord" text="Add" />
+            <Button onAction="#deleteRecord" text="Delete" />
+            <Button onAction="#searchRecord" text="Search" />
+            <Button onAction="#editRecord" text="Edit" />
+        </VBox>
+
+        <!-- Третий столбец кнопок -->
+        <VBox alignment="TOP_CENTER" spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <Label text="Бэкап">
+            <font>
+               <Font size="15.0" />
+            </font></Label>
+            <Button onAction="#createBackup" text="Backup" />
+            <Button onAction="#restoreBackup" text="Restore" />
+            <Button onAction="#importData" text="Import" />
+        </VBox>
+
+        <!-- TableView -->
+        <TableView fx:id="tableView" prefHeight="430.0" prefWidth="493.0" GridPane.columnIndex="1" GridPane.rowSpan="3">
+            <columns>
+                <TableColumn text="Ключ">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="key" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Поле1">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="field1" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Поле2">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="field2" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Поле3">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="field3" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Поле4">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="field4" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+    </GridPane>
+</AnchorPane>
